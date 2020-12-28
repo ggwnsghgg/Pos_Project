@@ -26,6 +26,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 
+import menu.MenuPage;
+
 public class admin_login extends JFrame {
 
 
@@ -83,8 +85,7 @@ public class admin_login extends JFrame {
 				String id = "user";
 				String pw = "playdata1*";
 				String sql;
-				
-				/* String id_c = "admin"; */
+
 
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
@@ -133,14 +134,14 @@ public class admin_login extends JFrame {
 		 
 */
 		// 뒤로가기 버튼 구간
-		JButton back_button = new JButton("뒤로 가기");
-		back_button.setBounds(180, 220, 100, 30);
-		back_button.addActionListener(new ActionListener() {
+	JButton back_button = new JButton("뒤로 가기");
+	back_button.setBounds(180, 220, 100, 30);
+	back_button.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				login.setVisible(false);
-				new menu.MenuPage();
+				new menu.PosProgramFrame();
 			}
 		});
 
@@ -156,105 +157,6 @@ public class admin_login extends JFrame {
 	}
 }
 
-class log_admin extends JFrame {
-	log_admin() {
-
-		JFrame log_admin = new JFrame("로그인");
-		JButton btn = new JButton("관리자 추가");
-		JButton btn1 = new JButton("로그아웃");
-		JButton btn2 = new JButton("관리 현황");
-		JLabel l1 = new JLabel("관리자 명");
-		JLabel l2 = new JLabel("생년월일");
-		JLabel l3 = new JLabel("아이디");
-		JLabel l4 = new JLabel("비밀번호");
-		JLabel l5 = new JLabel("생년월일은 앞 6자리만 적으세요!!");
-		TextField txt_f = new TextField();
-		TextField txt_f2 = new TextField();
-		TextField txt_f3 = new TextField();
-		TextField txt_f4 = new TextField();
-
-		l1.setBounds(30, 100, 80, 20);
-		l2.setBounds(30, 140, 80, 20);
-		l3.setBounds(30, 180, 80, 20);
-		l4.setBounds(30, 220, 80, 20);
-		l5.setBounds(100, 260, 200, 20);
-		l5.setForeground(Color.RED);
-
-		txt_f.setBounds(120, 100, 200, 20);
-		txt_f2.setBounds(120, 140, 200, 20);
-		txt_f3.setBounds(120, 180, 200, 20);
-		txt_f4.setBounds(120, 220, 200, 20);
-		txt_f4.setEchoChar('*');
-
-		btn.setBounds(30, 300, 100, 30);
-		btn.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				try {
-					BufferedWriter bos = new BufferedWriter(new FileWriter("회원명단.txt", true));
-					bos.write(txt_f.getText() + "/");
-					bos.write(txt_f2.getText() + "/");
-					bos.write(txt_f3.getText() + "/");
-					bos.write(txt_f4.getText() + "\r\n");
-					bos.close();
-					JOptionPane.showMessageDialog(null, "관리자가 생성되었습니다.");
-					dispose();
-				} catch (Exception e10) {
-					JOptionPane.showMessageDialog(null, "관리자 생성에 실패했습니다.");
-				}
-			}
-		});
-
-		btn1.setBounds(145, 300, 100, 30);
-		btn1.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				log_admin.setVisible(false);
-				new menu.MenuPage();
-			}
-		});
-
-		btn2.setBounds(260, 300, 100, 30);
-		btn2.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				log_admin.setVisible(false);
-				new admin_page();
-			}
-		});
-
-		log_admin.add(l1);
-		log_admin.add(l2);
-		log_admin.add(l3);
-		log_admin.add(l4);
-		log_admin.add(l5);
-
-		log_admin.add(txt_f);
-		log_admin.add(txt_f2);
-		log_admin.add(txt_f3);
-		log_admin.add(txt_f4);
-
-		log_admin.add(btn);
-		log_admin.add(btn1);
-		log_admin.add(btn2);
-
-		log_admin.setSize(400, 400);
-		log_admin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		log_admin.getContentPane().setLayout(null);
-		log_admin.setResizable(false);
-		log_admin.setTitle("관리자 페이지");
-		log_admin.setVisible(true);
-		log_admin.setLayout(null);
-		log_admin.setLocationRelativeTo(null);
-		
-
-	}
-
-}
 
 class admin_page extends JFrame {
 

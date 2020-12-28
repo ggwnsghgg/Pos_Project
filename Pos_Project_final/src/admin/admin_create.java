@@ -40,9 +40,7 @@ class admin_create extends JFrame {
 	TextField txt_f6 = new TextField();
 	TextField txt_f7 = new TextField();
 	
-	JRadioButton rb1 = new JRadioButton("남자");
-	JRadioButton rb2 = new JRadioButton("여자");
-	
+
 
 
 	membername.setBounds(30,20,80,20);
@@ -85,12 +83,14 @@ class admin_create extends JFrame {
 			dto.setGender(txt_f5.getText());
 			dto.setPhone(txt_f6.getText());
 			dto.setEmail(txt_f7.getText());
+			
 			}
 			try {
 				adminDAO.create(dto);
 			}catch (Exception e1) {
 				e1.printStackTrace();
 			}
+			JOptionPane.showMessageDialog(null, "관리자가 생성 되었습니다.");
 			log_admin.setVisible(false);
 			new AdminPage_Frame();
 		}
