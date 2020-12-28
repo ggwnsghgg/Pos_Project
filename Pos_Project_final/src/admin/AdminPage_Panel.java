@@ -30,7 +30,8 @@ public class AdminPage_Panel extends JPanel {
 	//판매관리, 회원관리에서 mysql 연동을 위한 공통 필드 값
 	Connection conn = null; //mysql에 연결을 위한 필드값
 	Statement stmt = null;  //mysql 쿼리문 생성을 위한 필드값
-	ResultSet rs = null;		
+	ResultSet rs = null;
+	ResultSet rs1 = null;
 	String url = "jdbc:mysql://database-1.c5n30oqbrfya.ap-northeast-2.rds.amazonaws.com:3306/posdb"; //연결할 DBMS의 주소
 	String id = "user"; // 접속할 mysql 아이디
 	String pw = "playdata1*"; // 접속할 mysql 패스워드
@@ -121,7 +122,7 @@ public class AdminPage_Panel extends JPanel {
 			//mysql 테이블(memberdb)에서 데이터 가져오는 구간
 			try {
 				//클래스 로딩함
-				Class.forName("com.mysql.jdbc.Driver");
+				Class.forName("com.mysql.cj.jdbc.Driver");
 				//mysql과 연결
 				conn = DriverManager.getConnection(url,id,pw);
 				//mysql과 연결된 conn객체로부터 구문객체를 얻음
@@ -141,6 +142,18 @@ public class AdminPage_Panel extends JPanel {
 					String Email = rs.getString("email");
 					m.addRow(new Object[]{number,Name,ID,PW,Birth,Gender,Phone,Email});
 				}
+				//총 회원 수 출력을 위한 mysql문
+				rs1 = stmt.executeQuery("WITH abc (total) AS (SELECT COUNT(*) FROM memberdb) SELECT total FROM abc");
+				int memberTotal = 0;
+				while(rs1.next()) {
+					memberTotal = memberTotal + rs1.getInt("total");					
+				}
+				//총 회원 수 출력
+				tf.setBackground(Color.WHITE);
+				add(tf);
+				setBackground(Color.WHITE);
+				tf.setText(String.valueOf("관리자 수 : " + memberTotal + "명"));
+				tf.setFont(new Font("맑은 고딕", Font.BOLD, 15));							
 				}
 			catch (ClassNotFoundException e) {
 				e.printStackTrace();
@@ -158,12 +171,7 @@ public class AdminPage_Panel extends JPanel {
 				}
 			}
 							
-			//총 회원 수 출력
-			tf.setBackground(Color.WHITE);
-			add(tf);
-			setBackground(Color.WHITE);
-			tf.setText(String.valueOf("관리자 수 : 4명"));
-			tf.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+
 						
 			//테이블 서식			
 			table.setRowHeight(30);

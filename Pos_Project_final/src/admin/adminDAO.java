@@ -46,7 +46,7 @@ public class adminDAO {
 	 
 
 
-	Class.forName("com.mysql.jdbc.Driver");
+	Class.forName("com.mysql.cj.jdbc.Driver");
 	con = DriverManager.getConnection("jdbc:mysql://database-1.c5n30oqbrfya.ap-northeast-2.rds.amazonaws.com:3306/posdb?serverTimezone=Asia/Seoul","user","playdata1*");
 	stmt = (Statement) con.createStatement();
 	stmt.executeUpdate(sql);

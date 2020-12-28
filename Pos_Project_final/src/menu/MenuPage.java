@@ -55,6 +55,13 @@ public class MenuPage extends JPanel {
 			System.out.println(CntList);
 			
 			new DataBase();
+			
+			// 모든 어레이리스트 비우기(초기화)
+			ProductName.clear();
+			Price.clear();
+			ProductList.clear();
+			PriceList.clear();
+			CntList.clear();		
 		}		
 	}
 	
@@ -105,7 +112,7 @@ public class MenuPage extends JPanel {
       
       //----------------------------------결제 하기 버튼-------------------------------------------
       JButton PayButton = new JButton("결제하기");
-      PayButton.setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\결제하기.jpg"));
+      PayButton.setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\결제하기.jpg"));
       PayButton.setBounds(1370, 740, 180, 150);
       add(PayButton);
       PayButton.addActionListener(new ActionListener() {
@@ -122,13 +129,14 @@ public class MenuPage extends JPanel {
            textfield.setFont(new Font("맑은 고딕", Font.BOLD, 40));
            
            new operation();
+
          }
       });
 
      
       //----------------------------------선택 취소 버튼-------------------------------------------
       JButton RemoveButton = new JButton("선택 취소");
-      RemoveButton.setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\선택취소.jpg"));
+      RemoveButton.setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\선택취소.jpg"));
       RemoveButton.setBounds(1200, 740, 150, 150);
       add(RemoveButton);
       
@@ -145,7 +153,7 @@ public class MenuPage extends JPanel {
       
       //----------------------------------전체 취소 버튼-------------------------------------------
       JButton AllRemoveButton = new JButton("전체 취소");
-      AllRemoveButton.setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\전체취소.jpg"));
+      AllRemoveButton.setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\전체취소.jpg"));
       AllRemoveButton.setBounds(1030, 740, 150, 150);
       add(AllRemoveButton);
       
@@ -200,64 +208,64 @@ DefaultTableModel model = new DefaultTableModel(Data, ColName);
                  MenuPagebtn[i] = new JButton(menu[i]);
                  add(MenuPagebtn[i]);
               }
-            	  MenuPagebtn[0].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\희망줄라면.jpg"));
+            	  MenuPagebtn[0].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\희망줄라면.jpg"));
             	  add(MenuPagebtn[0]);
             	  
-            	  MenuPagebtn[1].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\블랙김치.jpg"));
+            	  MenuPagebtn[1].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\블랙김치.jpg"));
             	  add(MenuPagebtn[1]);
             	  
-            	  MenuPagebtn[2].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\제주마늘라면.jpg"));
+            	  MenuPagebtn[2].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\제주마늘라면.jpg"));
             	  add(MenuPagebtn[3]);
             	  
-            	  MenuPagebtn[3].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\맛있는라면.jpg"));
+            	  MenuPagebtn[3].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\맛있는라면.jpg"));
             	  add(MenuPagebtn[3]);
             	  
-            	  MenuPagebtn[4].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\건면사발.jpg"));
+            	  MenuPagebtn[4].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\건면사발.jpg"));
             	  add(MenuPagebtn[4]);
             	  
-            	  MenuPagebtn[5].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\핑크퐁상어가족.jpg"));
+            	  MenuPagebtn[5].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\핑크퐁상어가족.jpg"));
             	  add(MenuPagebtn[5]);
             	  
-            	  MenuPagebtn[6].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\LOL에그빈.jpg"));
+            	  MenuPagebtn[6].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\LOL에그빈.jpg"));
             	  add(MenuPagebtn[6]);
             	  
-            	  MenuPagebtn[7].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\킷캣팝스.jpg"));
+            	  MenuPagebtn[7].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\킷캣팝스.jpg"));
             	  add(MenuPagebtn[7]);
             	  
-            	  MenuPagebtn[8].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\얼초크리스마스파티.jpg"));
+            	  MenuPagebtn[8].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\얼초크리스마스파티.jpg"));
             	  add(MenuPagebtn[8]);
             	  
-            	  MenuPagebtn[9].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\가나밀크티맛.jpg"));
+            	  MenuPagebtn[9].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\가나밀크티맛.jpg"));
             	  add(MenuPagebtn[9]);
             	  
-            	  MenuPagebtn[10].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\파르페초코볼.jpg"));
+            	  MenuPagebtn[10].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\파르페초코볼.jpg"));
             	  add(MenuPagebtn[10]);
             	  
-            	  MenuPagebtn[11].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\쿠키앤크림미니컵.jpg"));
+            	  MenuPagebtn[11].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\쿠키앤크림미니컵.jpg"));
             	  add(MenuPagebtn[11]);
             	  
-            	  MenuPagebtn[12].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\로스티드라떼파인트.jpg"));
+            	  MenuPagebtn[12].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\로스티드라떼파인트.jpg"));
             	  add(MenuPagebtn[12]);
             	  
-            	  MenuPagebtn[13].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\월드콘쿠앤크.jpg"));
+            	  MenuPagebtn[13].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\월드콘쿠앤크.jpg"));
             	  add(MenuPagebtn[13]);
             	  
-            	  MenuPagebtn[14].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\쑥떡쑥떡샌드.jpg"));
+            	  MenuPagebtn[14].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\쑥떡쑥떡샌드.jpg"));
             	  add(MenuPagebtn[14]);
             	  
-            	  MenuPagebtn[15].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\골드유자500ml.jpg"));
+            	  MenuPagebtn[15].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\골드유자500ml.jpg"));
             	  add(MenuPagebtn[15]);
             	  
-            	  MenuPagebtn[16].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\요플레토핑화이트초코.jpg"));
+            	  MenuPagebtn[16].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\요플레토핑화이트초코.jpg"));
             	  add(MenuPagebtn[16]);
             	  
-            	  MenuPagebtn[17].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\링곤베리350ml.jpg"));
+            	  MenuPagebtn[17].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\링곤베리350ml.jpg"));
             	  add(MenuPagebtn[17]);
             	  
-            	  MenuPagebtn[18].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\착즙오렌지200ml.jpg"));
+            	  MenuPagebtn[18].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\착즙오렌지200ml.jpg"));
             	  add(MenuPagebtn[18]);
             	  
-            	  MenuPagebtn[19].setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\menu\\요거톡스타볼.jpg"));
+            	  MenuPagebtn[19].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\요거톡스타볼.jpg"));
             	  add(MenuPagebtn[19]);
             	  
 
@@ -279,19 +287,7 @@ DefaultTableModel model = new DefaultTableModel(Data, ColName);
               JButton MenuPagebtn = (JButton)e.getSource();
               DefaultTableModel m = (DefaultTableModel)table.getModel();
               m.addRow(new Object[]{menu[index],count,price[index]});
-              
-              
-              for(int i=0; i<ProductName.size();i=i+1) {
-                  ProductName.remove(i); //어레이리스트 비우기(초기화)
-                  Price.remove(i); //어레이리스트 비우기(초기화)
-               }
-               for(int i=0; i<ProductList.size();i=i+1) {
-                  ProductList.remove(i); //어레이리스트 비우기(초기화)
-                  PriceList.remove(i); //어레이리스트 비우기(초기화)
-                  CntList.remove(i); //어레이리스트 비우기(초기화)                 
-               }
-              
-              
+                          
               ProductName.add(menu[index]);
               Price.add(price[index]);
                     }

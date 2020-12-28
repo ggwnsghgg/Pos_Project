@@ -25,7 +25,7 @@ public class DataBase {
 			int sumdb = countdb * pricedb; // 합계
 			try {
 				 //클래스 로딩함
-				Class.forName("com.mysql.jdbc.Driver");
+				Class.forName("com.mysql.cj.jdbc.Driver");
 				//mysql과 연결
 				conn = DriverManager.getConnection(url,id,pw);
 				//mysql과 연결된 conn객체로부터 구문객체를 얻음

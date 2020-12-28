@@ -79,7 +79,7 @@ public class main extends JFrame{
 		
 		
 		JButton btn1 = new JButton("구매하러가기");
-		ImageIcon img1 = new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\main\\메인.gif");
+		ImageIcon img1 = new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\main\\메인.gif");
 
 		frame = new JFrame();
 		frame.setTitle("편의점 무인포스기");
@@ -113,7 +113,7 @@ public class main extends JFrame{
 		frame.getContentPane().add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel();
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\shin\\Desktop\\JavaProject-main\\Pos_Project_final\\src\\main\\배너.png"));
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\main\\배너.png"));
 		lblNewLabel_1.setBounds(20, 21, 700, 100);
 		frame.getContentPane().add(lblNewLabel_1);
 		frame.setVisible(true);

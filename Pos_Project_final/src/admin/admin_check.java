@@ -25,7 +25,7 @@ public class admin_check {
         int result = 1;
  
         try {
-            Class.forName("com.mysql.jdbc.Driver"); // 알아서 들어간다..conn로
+            Class.forName("com.mysql.cj.jdbc.Driver"); // 알아서 들어간다..conn로
             info = new Properties();
             info.setProperty("user", "user");
             info.setProperty("password", "playdata1*");
