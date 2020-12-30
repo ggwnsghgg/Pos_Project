@@ -208,7 +208,7 @@ DefaultTableModel model = new DefaultTableModel(Data, ColName);
                  MenuPagebtn[i] = new JButton(menu[i]);
                  add(MenuPagebtn[i]);
               }
-            	  MenuPagebtn[0].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\희망줄라면.jpg"));
+            	  MenuPagebtn[0].setIcon(new ImageIcon("C:\\Users\\Playdata\\OneDrive\\바탕 화면\\제목 1.jpg"));
             	  add(MenuPagebtn[0]);
             	  
             	  MenuPagebtn[1].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\블랙김치.jpg"));
