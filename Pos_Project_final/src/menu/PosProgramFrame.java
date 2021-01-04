@@ -20,7 +20,7 @@ public class PosProgramFrame extends JFrame {
 	 
      JButton btnNewButton = new JButton("관리자");
      
-     btnNewButton.setBounds(1030, 900, 80, 23);
+     btnNewButton.setBounds(10, 10, 10, 10);
      btnNewButton.addActionListener(new ActionListener() {
 		
 		@Override
