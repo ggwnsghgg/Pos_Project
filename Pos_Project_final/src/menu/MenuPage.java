@@ -19,65 +19,64 @@ import javax.swing.table.DefaultTableModel;
 
 import DB.DataBase;
 
-
 public class MenuPage extends JPanel {
-	// 결제된 정보가 담겨 있는 어레이리스트들(중복값이 있음)
-	public static ArrayList<String> ProductName = new ArrayList<String>(); //중복값이 있는 상품이름 리스트
-	public static ArrayList<Integer> Price = new ArrayList<Integer>(); //중값이 있는 상품가격 리스트
+   // 결제된 정보가 담겨 있는 어레이리스트들(중복값이 있음)
+   public static ArrayList<String> ProductName = new ArrayList<String>(); //중복값이 있는 상품이름 리스트
+   public static ArrayList<Integer> Price = new ArrayList<Integer>(); //중값이 있는 상품가격 리스트
    
-	// 실제 AdminPage_Panel로 넘겨주는 어레이리스트들(중복값이 없음)
-	public static ArrayList<String> ProductList = new ArrayList<String>(); //중복값이 없는 상품이름 리스트
-	public static ArrayList<Integer> PriceList = new ArrayList<Integer>(); //중복값이 없는 상품가격 리스트
-	public static ArrayList<Integer> CntList = new ArrayList<Integer>(); //선택된 상품갯수 리스트
+   // 실제 AdminPage_Panel로 넘겨주는 어레이리스트들(중복값이 없음)
+   public static ArrayList<String> ProductList = new ArrayList<String>(); //중복값이 없는 상품이름 리스트
+   public static ArrayList<Integer> PriceList = new ArrayList<Integer>(); //중복값이 없는 상품가격 리스트
+   public static ArrayList<Integer> CntList = new ArrayList<Integer>(); //선택된 상품갯수 리스트
    
-	// 위의 중복값이 있는 어레이리스트들을 중복값 없는 데이터로 만들어주는 기능
-	public class operation {
-		operation(){		
-			for(int i = 0; i <ProductName.size(); i=i+1) {
-				System.out.println(ProductName.get(i));
-				if(!ProductList.contains(ProductName.get(i))) {
-					ProductList.add(ProductName.get(i));
-					PriceList.add(Price.get(i));
-					int cnt = 0;
-					for(int I = i; I < ProductName.size(); I = I+1) {
-						if(ProductName.get(i) == ProductName.get(I)) {
-							cnt = cnt + 1;
-						}
-					}
-					CntList.add(cnt);
-				}
-				else {
-					continue;
-				}
-			}
-			System.out.println(ProductList);
-			System.out.println(PriceList);
-			System.out.println(CntList);
-			
-			new DataBase();
-			
-			// 모든 어레이리스트 비우기(초기화)
-			ProductName.clear();
-			Price.clear();
-			ProductList.clear();
-			PriceList.clear();
-			CntList.clear();		
-		}		
-	}
-	
+   // 위의 중복값이 있는 어레이리스트들을 중복값 없는 데이터로 만들어주는 기능
+   public class operation {
+      operation(){      
+         for(int i = 0; i <ProductName.size(); i=i+1) {
+            System.out.println(ProductName.get(i));
+            if(!ProductList.contains(ProductName.get(i))) {
+               ProductList.add(ProductName.get(i));
+               PriceList.add(Price.get(i));
+               int cnt = 0;
+               for(int I = i; I < ProductName.size(); I = I+1) {
+                  if(ProductName.get(i) == ProductName.get(I)) {
+                     cnt = cnt + 1;
+                  }
+               }
+               CntList.add(cnt);
+            }
+            else {
+               continue;
+            }
+         }
+         System.out.println(ProductList);
+         System.out.println(PriceList);
+         System.out.println(CntList);
+         
+         new DataBase();
+         
+         // 모든 어레이리스트 비우기(초기화)
+         ProductName.clear();
+         Price.clear();
+         ProductList.clear();
+         PriceList.clear();
+         CntList.clear();      
+      }      
+   }
+   
  //--------------------------------- 배열로 생성한 버튼 정보 -----------------------------------------
    JTextField textfield = new JTextField(30);
    JButton[] MenuPagebtn = new JButton[20];
    
-   String[] menu = { "오뚜기)희망줄라면컵","농심)신라면블랙김치컵","HEYROO제주마늘라면컵","삼양)맛있는라면컵","농심)신라면건면사발",
-		   			"씨믹스)핑크퐁상어가족","미성)LoL에그빈","네슬레)킷캣팝스","해태)얼초크리스마스파티","롯데)가나밀크티맛",
-		   			"HEYROO파르페초코볼","하겐)쿠키앤크림미니컵","하겐)로스티드라떼파인트","롯데)월드콘쿠앤크","서주)쑥떡쑥떡샌드",
-		   			"OKF)골드유자500ml","빙)요플레토핑화이트초코","와일드베리)링곤베리350ml","돈시몬)착즙오렌지200ml","다논)요거톡스타볼"};
+   String[] menu = { "까르보불닭큰컵","육개장","신라면","진라면매운맛","참깨라면",
+                  "다이제","매운새우깡","오감자","오예스","포카칩",
+                  "메로나","비비빅","월드콘","투게더","하겐다즈",
+                  "바나나우유","씨그램","크래프트","토레타","핫식스"};
    
-   int[] price = {1000,1600,1500,1500,1500,
-              	2000,2000,1500,5000,3000,
-              	2500,4800,12900,1800,1800,
-              	2000,1500,1500,1500,1400};
+   int[] price = {1500,850,1150,950,1200,
+                 2500,1300,1200,1000,1500,
+                 1000,1200,1800,2900,4800,
+                 1400,1300,2500,1200,2000};
    String[]img = {
    };
    
@@ -201,80 +200,80 @@ DefaultTableModel model = new DefaultTableModel(Data, ColName);
       
       MenuButton() {
          
-          	setLayout(new GridLayout(4,10,10,5));
+             setLayout(new GridLayout(4,10,10,5));
             setBackground(Color.LIGHT_GRAY);
 
               for(int i=0; i<MenuPagebtn.length;i=i+1) {
                  MenuPagebtn[i] = new JButton(menu[i]);
                  add(MenuPagebtn[i]);
               }
-            	  MenuPagebtn[0].setIcon(new ImageIcon("C:\\Users\\Playdata\\OneDrive\\바탕 화면\\제목 1.jpg"));
-            	  add(MenuPagebtn[0]);
-            	  
-            	  MenuPagebtn[1].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\블랙김치.jpg"));
-            	  add(MenuPagebtn[1]);
-            	  
-            	  MenuPagebtn[2].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\제주마늘라면.jpg"));
-            	  add(MenuPagebtn[3]);
-            	  
-            	  MenuPagebtn[3].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\맛있는라면.jpg"));
-            	  add(MenuPagebtn[3]);
-            	  
-            	  MenuPagebtn[4].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\건면사발.jpg"));
-            	  add(MenuPagebtn[4]);
-            	  
-            	  MenuPagebtn[5].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\핑크퐁상어가족.jpg"));
-            	  add(MenuPagebtn[5]);
-            	  
-            	  MenuPagebtn[6].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\LOL에그빈.jpg"));
-            	  add(MenuPagebtn[6]);
-            	  
-            	  MenuPagebtn[7].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\킷캣팝스.jpg"));
-            	  add(MenuPagebtn[7]);
-            	  
-            	  MenuPagebtn[8].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\얼초크리스마스파티.jpg"));
-            	  add(MenuPagebtn[8]);
-            	  
-            	  MenuPagebtn[9].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\가나밀크티맛.jpg"));
-            	  add(MenuPagebtn[9]);
-            	  
-            	  MenuPagebtn[10].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\파르페초코볼.jpg"));
-            	  add(MenuPagebtn[10]);
-            	  
-            	  MenuPagebtn[11].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\쿠키앤크림미니컵.jpg"));
-            	  add(MenuPagebtn[11]);
-            	  
-            	  MenuPagebtn[12].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\로스티드라떼파인트.jpg"));
-            	  add(MenuPagebtn[12]);
-            	  
-            	  MenuPagebtn[13].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\월드콘쿠앤크.jpg"));
-            	  add(MenuPagebtn[13]);
-            	  
-            	  MenuPagebtn[14].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\쑥떡쑥떡샌드.jpg"));
-            	  add(MenuPagebtn[14]);
-            	  
-            	  MenuPagebtn[15].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\골드유자500ml.jpg"));
-            	  add(MenuPagebtn[15]);
-            	  
-            	  MenuPagebtn[16].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\요플레토핑화이트초코.jpg"));
-            	  add(MenuPagebtn[16]);
-            	  
-            	  MenuPagebtn[17].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\링곤베리350ml.jpg"));
-            	  add(MenuPagebtn[17]);
-            	  
-            	  MenuPagebtn[18].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\착즙오렌지200ml.jpg"));
-            	  add(MenuPagebtn[18]);
-            	  
-            	  MenuPagebtn[19].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\요거톡스타볼.jpg"));
-            	  add(MenuPagebtn[19]);
-            	  
+                 MenuPagebtn[0].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\까르보불닭큰컵.jpg"));
+                 add(MenuPagebtn[0]);
+                 
+                 MenuPagebtn[1].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\육개장.jpg"));
+                 add(MenuPagebtn[1]);
+                 
+                 MenuPagebtn[2].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\신라면.jpg"));
+                 add(MenuPagebtn[3]);
+                 
+                 MenuPagebtn[3].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\진라면매운맛.jpg"));
+                 add(MenuPagebtn[3]);
+                 
+                 MenuPagebtn[4].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\참깨라면.jpg"));
+                 add(MenuPagebtn[4]);
+                 
+                 MenuPagebtn[5].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\다이제.jpg"));
+                 add(MenuPagebtn[5]);
+                 
+                 MenuPagebtn[6].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\매운새우깡.jpg"));
+                 add(MenuPagebtn[6]);
+                 
+                 MenuPagebtn[7].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\오감자.jpg"));
+                 add(MenuPagebtn[7]);
+                 
+                 MenuPagebtn[8].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\오예스.jpg"));
+                 add(MenuPagebtn[8]);
+                 
+                 MenuPagebtn[9].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\포카칩.jpg"));
+                 add(MenuPagebtn[9]);
+                 
+                 MenuPagebtn[10].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\메로나.jpg"));
+                 add(MenuPagebtn[10]);
+                 
+                 MenuPagebtn[11].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\비비빅.jpg"));
+                 add(MenuPagebtn[11]);
+                 
+                 MenuPagebtn[12].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\월드콘.jpg"));
+                 add(MenuPagebtn[12]);
+                 
+                 MenuPagebtn[13].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\투게더.jpg"));
+                 add(MenuPagebtn[13]);
+                 
+                 MenuPagebtn[14].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\하겐다즈.jpg"));
+                 add(MenuPagebtn[14]);
+                 
+                 MenuPagebtn[15].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\바나나우유.jpg"));
+                 add(MenuPagebtn[15]);
+                 
+                 MenuPagebtn[16].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\씨그램.jpg"));
+                 add(MenuPagebtn[16]);
+                 
+                 MenuPagebtn[17].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\크래프트.jpg"));
+                 add(MenuPagebtn[17]);
+                 
+                 MenuPagebtn[18].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\토레타.jpg"));
+                 add(MenuPagebtn[18]);
+                 
+                 MenuPagebtn[19].setIcon(new ImageIcon("C:\\JAVA_LAB\\JavaProject-main\\Pos_Project_final\\src\\menu\\핫식스.jpg"));
+                 add(MenuPagebtn[19]);
+                 
 
-            	  
+                 
    
     
 //-------------------------------- 메뉴 입력 하고 하단 텍스트 필드에 담는 반복문 ---------------------------
-            	  
-            	  
+                 
+                 
     for(int i=0; i<MenuPagebtn.length;i=i+1) {
        
         final int index = i;
@@ -307,5 +306,5 @@ DefaultTableModel model = new DefaultTableModel(Data, ColName);
 
       }
 
-	}
+   }
   }
