@@ -1,6 +1,6 @@
 # Pos_Project
 
 ## PPT
-<center>
-<img src="https://user-images.githubusercontent.com/73145516/103860485-0a064e00-50ff-11eb-8dda-b58d13abc859.JPG" alt="Pos_Project1" width="50%"></img>
-</center>
+
+<img src="https://user-images.githubusercontent.com/73145516/103862337-3a032080-5102-11eb-8950-796cde94b95f.JPG" style="max-width:100%;">
+
